@@ -1,7 +1,7 @@
 const express = require('express');
 // const cors =  require('cors');
 const app =  express();
-  
+const port = process.env.PORT || 3000
 var http = require('http').createServer(app);
 const io = require("socket.io")(http, {
     cors: {
@@ -59,7 +59,7 @@ function removeUser(userName,id)
         }
     }
 }
-http.listen('5432',()=>
+http.listen(port,()=>
 {
     console.log("server listen");
 })
