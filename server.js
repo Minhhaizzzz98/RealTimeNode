@@ -30,6 +30,7 @@ io.on("connection", socket => {
 
     socket.on("ketthuc",(msg) =>
     {
+        console.log(msg);
         socket.broadcast.emit("ketthuc-broadcast",{message:msg,userName : userName});
     });
     socket.on("disconnect", (reason)=>
